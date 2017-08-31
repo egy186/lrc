@@ -1,0 +1,45 @@
+{
+  "name": "@egy186/lrc",
+  "description": "LRC utilities",
+  "version": "0.4.0",
+  "author": "egy186",
+  "bin": {
+    "lrc-calc": "bin/lrc-calc",
+    "lrc2srt": "bin/lrc2srt",
+    "srt2lrc": "bin/srt2lrc"
+  },
+  "bugs": {
+    "url": "https://github.com/egy186/lrc/issues"
+  },
+  "dependencies": {
+    "commander": "^2.9.0",
+    "moment": "^2.17.1"
+  },
+  "devDependencies": {
+    "@egy186/eslint-config": "^0.27.0",
+    "eslint": "^4.5.0",
+    "intelli-espower-loader": "^1.0.1",
+    "mocha": "^3.5.0",
+    "nyc": "^11.1.0",
+    "power-assert": "^1.4.4",
+    "rimraf": "^2.6.1"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "homepage": "https://github.com/egy186/lrc#readme",
+  "keywords": [
+    "lrc"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egy186/lrc.git"
+  },
+  "scripts": {
+    "clean": "rimraf coverage",
+    "lint": "eslint . bin/*",
+    "test": "nyc --reporter=lcov --reporter=text mocha --require intelli-espower-loader"
+  }
+}

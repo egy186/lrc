@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "@egy186/eslint-config",
+    "@egy186/eslint-config/node"
+  ],
+  "rules": {
+    "array-element-newline": [
+      "error",
+      {
+        "multiline": true,
+        "minItems": 2
+      }
+    ]
+  }
+}
