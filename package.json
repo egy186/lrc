@@ -1,7 +1,7 @@
 {
   "name": "@egy186/lrc",
   "description": "LRC utilities",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "author": "egy186",
   "bin": {
     "lrc-calc": "bin/lrc-calc",
