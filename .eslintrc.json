@@ -3,6 +3,9 @@
     "@egy186/eslint-config",
     "@egy186/eslint-config/node"
   ],
+  "ignorePatterns": [
+    "coverage"
+  ],
   "overrides": [
     {
       "files": "*.test.js",
@@ -10,14 +13,5 @@
         "jest": true
       }
     }
-  ],
-  "rules": {
-    "array-element-newline": [
-      "error",
-      {
-        "multiline": true,
-        "minItems": 2
-      }
-    ]
-  }
+  ]
 }
