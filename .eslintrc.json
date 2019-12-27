@@ -3,6 +3,14 @@
     "@egy186/eslint-config",
     "@egy186/eslint-config/node"
   ],
+  "overrides": [
+    {
+      "files": "*.test.js",
+      "env": {
+        "jest": true
+      }
+    }
+  ],
   "rules": {
     "array-element-newline": [
       "error",

@@ -18,10 +18,7 @@
   "devDependencies": {
     "@egy186/eslint-config": "^0.30.0",
     "eslint": "^4.12.0",
-    "intelli-espower-loader": "^1.0.1",
-    "mocha": "^5.0.0",
-    "nyc": "^11.1.0",
-    "power-assert": "^1.4.4",
+    "jest": "^24.9.0",
     "rimraf": "^2.6.1"
   },
   "engines": {
@@ -32,7 +29,7 @@
     "lrc"
   ],
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/egy186/lrc.git"
@@ -40,6 +37,6 @@
   "scripts": {
     "clean": "rimraf coverage",
     "lint": "eslint . bin/*",
-    "test": "nyc --reporter=lcov --reporter=text mocha --require intelli-espower-loader"
+    "test": "jest --config jest.config.js --coverage"
   }
 }
