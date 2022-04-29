@@ -1,0 +1,35 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Lint
+      uses: actions/setup-node@v2
+      with:
+        node-version: lts/*
+    - run: npm ci
+    - run: npm run lint
+
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Test
+      uses: actions/setup-node@v2
+      with:
+        node-version: lts/*
+    - run: npm ci
+    - run: npm test
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        flag-name: run-${{ matrix.test_number }}
