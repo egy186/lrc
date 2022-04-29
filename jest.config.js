@@ -2,8 +2,7 @@
 
 const confug = {
   coverageDirectory: 'coverage',
-  errorOnDeprecated: true,
-  testEnvironment: 'node'
+  errorOnDeprecated: true
 };
 
 module.exports = confug;
