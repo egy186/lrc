@@ -2,31 +2,30 @@
 
 'use strict';
 
+const { Command } = require('commander');
 const fs = require('fs/promises');
-const program = require('commander');
 const shift = require('../lib/shift');
 const toSRT = require('../lib/to-srt');
 const { version } = require('../package.json');
 
+const program = new Command();
+
 program
   .version(version)
-  .usage('[options] file')
+  .argument('<file>', 'file input')
   .option('-o, --output <path>', 'file output')
-  .option('-s, --shift <seconds>', 'shift in seconds')
-  .parse(process.argv);
+  .option('-s, --shift <seconds>', 'shift in seconds', Number.parseFloat, 0)
+  .action(async (file, options) => {
+    const input = await fs.readFile(program.args[0], 'utf8');
 
-const lrc2srt = async () => {
-  const input = await fs.readFile(program.args[0], 'utf8');
-  const sec = parseFloat(program.shift) || 0;
+    const shifted = shift(input, options.shift);
+    const srt = toSRT(shifted);
 
-  const shifted = shift(input, sec);
-  const srt = toSRT(shifted);
+    if (typeof options.output === 'string') {
+      await fs.writeFile(options.output, srt, 'utf8');
+    } else {
+      console.log(srt); // eslint-disable-line no-console
+    }
+  });
 
-  if (typeof program.output === 'string') {
-    await fs.writeFile(program.output, srt, 'utf8');
-  } else {
-    console.log(srt); // eslint-disable-line no-console
-  }
-};
-
-lrc2srt();
+program.parse();
