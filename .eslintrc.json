@@ -8,7 +8,17 @@
   ],
   "overrides": [
     {
-      "files": "*.test.js",
+      "files": [
+        "test-fixtures/*"
+      ],
+      "rules": {
+        "node/no-sync": "off"
+      }
+    },
+    {
+      "files": [
+        "*.test.js"
+      ],
       "env": {
         "jest": true
       }

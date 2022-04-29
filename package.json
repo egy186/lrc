@@ -4,9 +4,9 @@
   "version": "1.0.0",
   "author": "egy186",
   "bin": {
-    "lrc-calc": "bin/lrc-calc",
-    "lrc2srt": "bin/lrc2srt",
-    "srt2lrc": "bin/srt2lrc"
+    "lrc-calc": "bin/lrc-calc.js",
+    "lrc2srt": "bin/lrc2srt.js",
+    "srt2lrc": "bin/srt2lrc.js"
   },
   "bugs": {
     "url": "https://github.com/egy186/lrc/issues"
@@ -16,15 +16,15 @@
     "moment": "^2.27.0"
   },
   "devDependencies": {
-    "@egy186/eslint-config": "^0.47.0",
-    "eslint": "^7.8.1",
-    "eslint-plugin-jsdoc": "^30.3.1",
+    "@egy186/eslint-config": "^0.73.0",
+    "eslint": "^8.14.0",
+    "eslint-plugin-jsdoc": "^39.2.9",
     "eslint-plugin-node": "^11.1.0",
     "jest": "^26.4.2",
     "rimraf": "^3.0.2"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=16.15.0"
   },
   "homepage": "https://github.com/egy186/lrc#readme",
   "keywords": [
@@ -38,7 +38,7 @@
   },
   "scripts": {
     "clean": "rimraf coverage",
-    "lint": "eslint . bin/*",
+    "lint": "eslint .",
     "test": "jest --config jest.config.js --coverage"
   }
 }
