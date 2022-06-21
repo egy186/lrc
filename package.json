@@ -16,7 +16,7 @@
     "moment": "^2.29.3"
   },
   "devDependencies": {
-    "@egy186/eslint-config": "^0.75.1",
+    "@egy186/eslint-config": "^0.76.1",
     "eslint": "^8.18.0",
     "eslint-plugin-jsdoc": "^39.3.0",
     "eslint-plugin-node": "^11.1.0",
