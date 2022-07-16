@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "commander": "^9.4.0",
-    "moment": "^2.29.3"
+    "moment": "^2.29.4"
   },
   "devDependencies": {
     "@egy186/eslint-config": "^0.76.1",
