@@ -12,7 +12,7 @@
         "test-fixtures/*"
       ],
       "rules": {
-        "node/no-sync": "off"
+        "n/no-sync": "off"
       }
     },
     {
