@@ -1,12 +1,13 @@
-'use strict';
+import { readFile } from 'node:fs/promises';
 
-const fs = require('fs');
-const path = require('path');
+const lrc = await readFile(new URL('./index.lrc', import.meta.url), 'utf8');
+const srt = await readFile(new URL('./index.srt', import.meta.url), 'utf8');
 
-const lrc = fs.readFileSync(path.join(__dirname, './index.lrc'), 'utf8');
-const srt = fs.readFileSync(path.join(__dirname, './index.srt'), 'utf8');
-
-module.exports = {
+const fixtures = {
   lrc,
   srt
 };
+
+export { lrc, srt };
+
+export default fixtures;

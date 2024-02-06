@@ -1,12 +1,10 @@
 #!/usr/bin/env node
 
-'use strict';
-
-const { Command } = require('commander');
-const fs = require('fs/promises');
-const shift = require('../lib/shift');
-const stretch = require('../lib/stretch');
-const { version } = require('../package.json');
+import { readFile, writeFile } from 'node:fs/promises';
+import { Command } from 'commander';
+import { shiftLrc } from '../lib/shift.js';
+import { stretchLrc } from '../lib/stretch.js';
+import { version } from '../package.json';
 
 const program = new Command();
 
@@ -17,13 +15,13 @@ program
   .option('-s, --shift <seconds>', 'shift in seconds', Number.parseFloat, 0)
   .option('-x, --stretch <rate>', 'stretch rate', Number.parseFloat, 1)
   .action(async (file, options) => {
-    const input = await fs.readFile(file, 'utf8');
+    const input = await readFile(file, 'utf8');
 
-    const shifted = shift(input, options.shift);
-    const lrc = stretch(shifted, options.stretch);
+    const shifted = shiftLrc(input, options.shift);
+    const lrc = stretchLrc(shifted, options.stretch);
 
     if (typeof options.output === 'string') {
-      await fs.writeFile(options.output, lrc, 'utf8');
+      await writeFile(options.output, lrc, 'utf8');
     } else {
       console.log(lrc); // eslint-disable-line no-console
     }

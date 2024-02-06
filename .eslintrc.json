@@ -1,27 +1,18 @@
 {
   "extends": [
-    "@egy186/eslint-config",
-    "@egy186/eslint-config/commonjs"
+    "@egy186/eslint-config"
   ],
   "ignorePatterns": [
     "coverage"
   ],
   "overrides": [
     {
-      "files": [
-        "test-fixtures/*"
+      "extends": [
+        "@egy186/eslint-config/jest"
       ],
-      "rules": {
-        "n/no-sync": "off"
-      }
-    },
-    {
       "files": [
         "*.test.js"
-      ],
-      "env": {
-        "jest": true
-      }
+      ]
     }
   ]
 }

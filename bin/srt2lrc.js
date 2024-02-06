@@ -1,12 +1,10 @@
 #!/usr/bin/env node
 
-'use strict';
-
-const { Command } = require('commander');
-const fromSRT = require('../lib/from-srt');
-const fs = require('fs/promises');
-const shift = require('../lib/shift');
-const { version } = require('../package.json');
+import { readFile, writeFile } from 'node:fs/promises';
+import { Command } from 'commander';
+import { shiftLrc } from '../lib/shift.js';
+import { srtToLrc } from '../lib/srt-to-lrc.js';
+import { version } from '../package.json';
 
 const program = new Command();
 
@@ -16,13 +14,13 @@ program
   .option('-o, --output <path>', 'file output')
   .option('-s, --shift <seconds>', 'shift in seconds', Number.parseFloat, 0)
   .action(async (file, options) => {
-    const input = await fs.readFile(file, 'utf8');
+    const input = await readFile(file, 'utf8');
 
-    const parsed = fromSRT(input);
-    const lrc = shift(parsed, options.shift);
+    const parsed = srtToLrc(input);
+    const lrc = shiftLrc(parsed, options.shift);
 
     if (typeof options.output === 'string') {
-      await fs.writeFile(options.output, lrc, 'utf8');
+      await writeFile(options.output, lrc, 'utf8');
     } else {
       console.log(lrc); // eslint-disable-line no-console
     }

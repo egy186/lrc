@@ -1,8 +1,7 @@
-'use strict';
-
-const confug = {
+const config = {
+  collectCoverageFrom: ['lib/**'],
   coverageDirectory: 'coverage',
   errorOnDeprecated: true
 };
 
-module.exports = confug;
+export default config;
