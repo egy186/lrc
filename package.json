@@ -17,10 +17,7 @@
   },
   "devDependencies": {
     "@egy186/eslint-config": "^1.0.2",
-    "@types/jest": "^29.5.12",
     "eslint": "^8.57.0",
-    "eslint-plugin-jest": "^28.8.0",
-    "jest": "^29.7.0",
     "rimraf": "^6.0.1"
   },
   "engines": {
@@ -38,8 +35,10 @@
   },
   "scripts": {
     "clean": "rimraf coverage",
+    "coverage": "mkdir coverage && npm test -- --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=coverage/lcov.info",
     "lint": "eslint .",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.config.js --coverage"
+    "precoverage": "npm run clean",
+    "test": "node --test"
   },
   "type": "module"
 }
