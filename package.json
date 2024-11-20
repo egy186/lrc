@@ -21,7 +21,7 @@
     "rimraf": "^6.0.1"
   },
   "engines": {
-    "node": ">=20.11.0"
+    "node": "^20.13.0 || >=22.4.1"
   },
   "exports": "./lib/index.js",
   "homepage": "https://github.com/egy186/lrc#readme",
