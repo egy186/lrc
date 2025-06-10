@@ -8,6 +8,11 @@
     "lrc2srt": "./bin/lrc2srt.js",
     "srt2lrc": "./bin/srt2lrc.js"
   },
+  "files": [
+    "./bin",
+    "./lib",
+    "!./lib/**/*.test.*"
+  ],
   "bugs": {
     "url": "https://github.com/egy186/lrc/issues"
   },
