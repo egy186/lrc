@@ -21,7 +21,7 @@
     "moment": "^2.30.1"
   },
   "devDependencies": {
-    "@egy186/eslint-config": "^4.0.0",
+    "@egy186/eslint-config": "^4.1.1",
     "eslint": "^9.39.0",
     "rimraf": "^6.1.2"
   },
