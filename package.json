@@ -17,7 +17,7 @@
     "url": "https://github.com/egy186/lrc/issues"
   },
   "dependencies": {
-    "commander": "^14.0.0",
+    "commander": "^14.0.2",
     "moment": "^2.30.1"
   },
   "devDependencies": {
