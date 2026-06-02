@@ -4,7 +4,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { Command } from 'commander';
 import { shiftLrc } from '../lib/shift.js';
 import { stretchLrc } from '../lib/stretch.js';
-import { version } from '../package.json';
+import { version } from '../package.json' with { type: 'json' };
 
 const program = new Command();
 
