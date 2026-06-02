@@ -4,7 +4,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { Command } from 'commander';
 import { lrcToSrt } from '../lib/lrc-to-srt.js';
 import { shiftLrc } from '../lib/shift.js';
-import { version } from '../package.json';
+import { version } from '../package.json' with { type: 'json' };
 
 const program = new Command();
 
